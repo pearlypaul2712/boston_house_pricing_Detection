@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>ML Detection Form</h3>
+
+<div class="container">
+  <form action="{{ url_for('predict')}}" method="post">
+    <label for="CRIM">Crime Rate</label>
+    <input type="text" id="CRIM" name="Crime Rate" placeholder="Your name..">
+
+       <label for="ZN">Proportion of residential land zoned for lots</label>
+    <input type="text" id="ZN" name="Crime Rate" placeholder="Your name..">
+
+    <label for="INDUS">proportion of non-retail business acres per town</label>
+    <input type="text" id="INDUS" name="proportion of non-retail business acres per town" placeholder="Your name..">
+  
+       <label for="CHAS">Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)</label>
+    <input type="text" id="CHAS" name="Non retail business acres" placeholder="Your name..">
+
+           <label for="NOX">Nitric oxides concentration (parts per 10 million)</label>
+    <input type="text" id="NOX" name="nitric oxides concentration (parts per 10 million)" placeholder="Your name..">
+     <label for="RM">average number of rooms per dwelling</label>
+    <input type="text" id="RM" name="Average number of rooms per dwelling" placeholder="Your name..">
+    <label for="AGE">Age</label>
+     <input type="text" id="AGE" name="Proportion of owner-occupied units built prior to 1940" placeholder="Your name..">
+         <label for="DIS">weighted distances to five Boston employment centres</label>
+     <input type="text" id="DIS" name="weighted distances to five Boston employment centres" placeholder="Your name..">
+         <label for="RAD">index of accessibility to radial highways</label>
+     <input type="text" id="RAD" name="index of accessibility to radial highways" placeholder="Your name..">
+       <label for="TAX">full-value property-tax rate per $10,000</label>
+     <input type="text" id="TAX" name="full-value property-tax rate per $10,000" placeholder="Your name..">
+         <label for="PTRATIO">pupil-teacher ratio by town</label>
+     <input type="text" id="PTRATIO" name="pupil-teacher ratio by town" placeholder="Your name..">
+    <label for="B">1000(Bk - 0.63)^2 where Bk is the proportion of black people by town</label>
+     <input type="text" id="B" name="1000(Bk - 0.63)^2 where Bk is the proportion of black people by town" placeholder="Your name..">
+       <label for="LSTAT">% lower status of the population</label>
+     <input type="text" id="LSTAT" name="% lower status of the population" placeholder="Your name..">
+      <label for="MEDV">Median value of owner-occupied homes in $1000's</label>
+     <input type="text" id="MEDV" name="Median value of owner-occupied homes in $1000's" placeholder="Your name..">
+
+    <input type="submit" value="Predict">
+  </form>
+</div>
+
+<br>
+<br>
+{{prediction_text}}
+
+
+
+</body>
+</html>

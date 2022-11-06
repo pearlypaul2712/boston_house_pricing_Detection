@@ -1,0 +1,7 @@
+###### Requirements without Version Specifiers ######
+Flask
+sklearn
+pandas
+numpy
+matplotlib.pyplot
+gunicorn
